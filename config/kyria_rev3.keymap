@@ -59,7 +59,7 @@
             label = "TAP_DANCE_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LSHIFT>, <&kcaps_word>;
+            bindings = <&kp LSHIFT>, <&caps_word>;
         };
 
         td_alt: tap_dance_caps_word {
