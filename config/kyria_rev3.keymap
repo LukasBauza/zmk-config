@@ -62,7 +62,8 @@
             bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
         };
     };
-    
+ };
+ 
 / {
     keymap {
         compatible = "zmk,keymap";
