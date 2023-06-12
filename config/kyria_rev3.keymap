@@ -54,12 +54,20 @@
 
 / {
     behaviors {
-        td_mt: tap_dance_mod_tap {
+        td_caps: tap_dance_caps {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
+            label = "TAP_DANCE_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
+            bindings = <&kp LSHIFT>, <&kp CAPS>;
+        };
+
+        td_caps_word: tap_dance_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CAPS_WORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LALT>, <&caps_word>;
         };
     };
  };
