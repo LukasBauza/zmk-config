@@ -37,6 +37,18 @@
             layers = <BASE>;
             bindings = <&mo NAV>;
         };
+        combo_num {
+            timeout-ms = <50>;
+            key-positions = <32 45>;
+            layers = <BASE>;
+            bindings = <&mo NUM>;
+        };
+        combo_sym {
+            timeout-ms = <50>;
+            key-positions = <33 46>;
+            layers = <BASE>;
+            bindings = <&mo SYM>;
+        };
     };
 };
     
