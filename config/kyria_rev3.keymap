@@ -34,7 +34,7 @@
         combo_nav {
             timeout-ms = <50>;
             key-positions = <31 44>;
-            //layers = <BASE>;
+            layers = <BASE>;
             bindings = <&mo NAV>;
         };
     };
