@@ -56,20 +56,46 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  Q  |  W  |  F   |  P   |  G   |                                          |  J   |  L    |  U    |  Y   |   ;   |   \  |
-            // |  TAB  |  A  |  R  |  S   |  T   |  D   |                                          |  H   |  N    |  E    |  I   |   O   |   '  |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  K   |  M    |  ,    |  .   |   /   | CTRL |
-            //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+            // |  ESC  |  Q  |  W  |  F   |  P   |  G   |                                          |  J   |  L    |  U    |  Y   |   ;   |   MOUSE  |
+            // |  CAPSW/ALT  |  A  |  R  |  S   |  T   |  D   |                                    |  H   |  N    |  E    |  I   |   O   |   '  |
+            // | GUI |  Z  |  X  |  C   |  V   |  B              | NONE | NONE |  | NONE | NONE |  K   |  M    |  ,    |  .   |   /   | MEDIA |
+            //                     | DEL  | RET  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  | TAB  | FUN |
             bindings = <
-            &kp ESC   &kp Q &kp W &kp F &kp P &kp G                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp BSLH
-            &kp TAB   &kp A &kp R &kp S &kp T &kp D                                                &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
-            &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-            &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+            &kp ESC  &kp Q &kp W &kp F &kp P &kp G                                                          &kp J &kp L  &kp U     &kp Y   &kp SEMI    &tog MOUSE
+            &td_caps_word &kp A &kp R &kp S &kp T &kp D                                                     &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
+            &kp LGUI &kp Z &kp X &kp C &kp V &kp B             &none &none          &none &none             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &tog MEDIA
+                                &kp DEL &kp RET &kp BSPC &td_caps &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp TAB &mo FUN
             >;
+        };
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        sym_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  !  |  &  |  {  |  }   |  +   |  *   |                                           |  NONE   |  \    |  NONE    |  NONE   |   NONE   |   NONE  |
+            // |  ~  |  *  |  (  |  )   |  =   |  -   |                                           |  NONE   |  :    |  ;    |  _   |   -   |   NONE  |
+            // |  $   |  |  |  [  |  ]   |  /   |  @   | NONE | NONE |              | NONE | SYM |  NONE   |  NONE    |  NONE    |  NONE   |   NONE   | NONE |
+            //                     | DEL  | RET  | BSPC  |  LSHIFT  |   CTRL   |    | NONE | SYM | NONE  | NONE  | NONE |
+            bindings = <
+            &EXCL   &kp AMPS &kp LBRC &kp RBRC &kp KP_PLUS &kp KP_ASTERISK                                                         &none &kp BSLH  &none     &none   &none    &none
+            &TILDE  &kp HASH &kp LPAR &kp RPAR &kp KP_EQUAL &kp KP_MINUS                                                     &none &kp COLON  &kp SEMI  &kp UNDER   &kp GRAVE &none
+            &DLLR   &kp PIPE &kp LBRC &kp RBRC &kp KP_SLASH &kp AT     &none &none               &none &none  &none &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &kp LSHIFT &kp LCTRL         &none  &none &none &none &none
+            >;
+        };
+
+        num_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  .  |  [  |  7  |  8   |  9   |  ]   |                                           |  NONE   |  NONE    |  NONE    |  NONE   |   NONE   |   NONE  |
+            // |  ;  |  0  |  4  |  5   |  6   |  =   |                                           |  NONE   |  RSHIFT    |  RCTRL    |  ALT   |   RGUI   |   NONE  |
+            // |  #   |  -  |  1  |  2   |  3   |  \   | NONE | NONE |              | NONE | SYM |  NONE   |  NONE    |  NONE    |  NONE   |   NONE   | NONE |
+            //                     | DEL  | RET  | BSPC  |  LSHIFT  |   CTRL   |    | NONE | SYM | NONE  | NONE  | NONE |
+            bindings = <
+            &EXCL   &kp AMPS &kp LBRC &kp RBRC &kp KP_PLUS &kp KP_ASTERISK                                                         &none &kp BSLH  &none     &none   &none    &none
+            &TILDE  &kp HASH &kp LPAR &kp RPAR &kp KP_EQUAL &kp KP_MINUS                                                     &none &kp COLON  &kp SEMI  &kp UNDER   &kp GRAVE &none
+            &DLLR   &kp PIPE &kp LBRC &kp RBRC &kp KP_SLASH &kp AT     &none &none               &none &none  &none &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &kp LSHIFT &kp LCTRL         &none  &none &none &none &none
+            >;
         };
     };
 };
