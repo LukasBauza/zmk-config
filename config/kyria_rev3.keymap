@@ -54,20 +54,20 @@
 
 / {
     behaviors {
-        td_caps: tap_dance_caps {
+        td_lshift: tap_dance_caps {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LSHIFT>, <&kp CAPS>;
+            bindings = <&kp LSHIFT>, <&kcaps_word>;
         };
 
-        td_caps_word: tap_dance_caps_word {
+        td_alt: tap_dance_caps_word {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_CAPS_WORD";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LALT>, <&caps_word>;
+            bindings = <&kp LALT>, <&kp CAPS>;
         };
     };
  };
@@ -84,9 +84,9 @@
             //                     | DEL  | RET  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  | TAB  | FUN |
             bindings = <
             &kp ESC  &kp Q &kp W &kp F &kp P &kp G                                                          &kp J &kp L  &kp U     &kp Y   &kp SEMI    &tog MOUSE
-            &td_caps_word &kp A &kp R &kp S &kp T &kp D                                                     &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
+            &td_alt &kp A &kp R &kp S &kp T &kp D                                                     &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
             &kp LGUI &kp Z &kp X &kp C &kp V &kp B             &none &none          &none &none             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &tog MEDIA
-                                &kp DEL &kp RET &kp BSPC &td_caps &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp TAB &mo FUN
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp TAB &mo FUN
             >;
         };
 
@@ -100,7 +100,7 @@
             &kp EXCL   &kp AMPS &kp LBRC &kp RBRC &kp KP_PLUS &kp KP_ASTERISK                                                         &none &kp BSLH  &kp GRAVE   &none   &none    &none
             &kp TILDE  &kp HASH &kp LPAR &kp RPAR &kp KP_EQUAL &kp KP_MINUS                                                     &none &kp COLON  &kp SEMI  &kp UNDER   &none  &none
             &kp DLLR   &kp PIPE &kp LBRC &kp RBRC &kp KP_SLASH &kp AT     &none &none               &none &none  &none &kp LT  &kp GT &none &none &none
-                                &kp DEL &kp RET &kp BSPC &td_caps &kp LCTRL         &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
             >;
         };
 
@@ -114,7 +114,7 @@
             &kp EXCL   &kp AMPS &kp LBRC &kp RBRC &kp KP_PLUS &kp KP_ASTERISK                                                         &none &kp BSLH  &none     &none   &none    &none
             &kp TILDE  &kp HASH &kp LPAR &kp RPAR &kp KP_EQUAL &kp KP_MINUS                                                     &none &kp COLON  &kp SEMI  &kp UNDER   &kp GRAVE &none
             &kp DLLR   &kp PIPE &kp LBRC &kp RBRC &kp KP_SLASH &kp AT     &none &none               &none &none  &none &none  &none &none &none &none
-                                &kp DEL &kp RET &kp BSPC &td_caps &kp LCTRL         &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
             >;
         };
     };
