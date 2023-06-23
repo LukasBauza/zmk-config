@@ -94,12 +94,12 @@
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  !  |  &  |  {  |  }   |  +   |  *   |                                           |  NONE   |  \    |  `    |  NONE   |   NONE   |   NONE  |
             // |  ~  |  #  |  (  |  )   |  =   |  -   |                                           |  NONE   |  :    |  ;    |  _   |   NONE   |   NONE  |
-            // |  $   |  |  |  [  |  ]   |  /   |  @   | NONE | NONE |              | NONE | SYM |  NONE   |  <    |  >    |  NONE   |   NONE   | NONE |
+            // |  $   |  |  |  [  |  ]   |  /   |  "   | NONE | NONE |              | NONE | SYM |  NONE   |  <    |  >    |  NONE   |   NONE   | NONE |
             //                     | DEL  | RET  | BSPC  |  LSHIFT  |   CTRL   |    | NONE | SYM | NONE  | NONE  | NONE |
             bindings = <
             &kp EXCL   &kp AMPS &kp LBRC &kp RBRC &kp KP_PLUS &kp KP_ASTERISK                                                         &none &kp BSLH  &kp GRAVE   &none   &none    &none
             &kp TILDE2  &kp NUHS &kp LPAR &kp RPAR &kp EQUAL &kp KP_MINUS                                                     &none &kp COLON  &kp SEMI  &kp UNDER   &none  &none
-            &kp DLLR   &kp PIPE2 &kp LBKT &kp RBKT &kp KP_SLASH &kp AT_SIGN     &none &none               &none &none  &none &kp LT  &kp GT &none &none &none
+            &kp DLLR   &kp PIPE2 &kp LBKT &kp RBKT &kp KP_SLASH &kp DQT     &none &none               &none &none  &none &kp LT  &kp GT &none &none &none
                                 &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
             >;
         };
