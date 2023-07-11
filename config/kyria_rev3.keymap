@@ -86,7 +86,7 @@
             //                     | DEL  |  TAB  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  |  RET  | FUN |
             bindings = <
             &kp ESC  &kp Q &kp W &kp F &kp P &kp G                                                          &kp J &kp L  &kp U     &kp Y   &kp SEMI    &tog MOUSE
-            &ahct CAPS LALT &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
+            &ahct LALT CAPS &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
             &kp LGUI &kp Z &kp X &kp C &kp V &kp B             &none &none          &none &none             &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &tog MEDIA
                                 &kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
