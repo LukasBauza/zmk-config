@@ -28,12 +28,12 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <30 43>;
+            key-positions = <31 44>;
             bindings = <&tog BASE>;
         };
         combo_nav {
             timeout-ms = <50>;
-            key-positions = <31 44>;
+            key-positions = <30 43>;
             layers = <BASE>;
             bindings = <&mo NAV>;
         };
@@ -69,6 +69,15 @@
             tapping-term-ms = <300>;
             bindings = <&kp LALT>, <&kp CAPS>;
         };
+        ht_ahct: alt_hold_caps_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALT_HOLD_CAPS_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp CAPS>, <&kp LALT>;
+        };
     };
  };
  
@@ -81,10 +90,10 @@
             // |  ESC  |  Q  |  W  |  F   |  P   |  G   |                                          |  J   |  L    |  U    |  Y   |   ;   |   MOUSE  |
             // |  CAPSW/ALT  |  A  |  R  |  S   |  T   |  D   |                                    |  H   |  N    |  E    |  I   |   O   |   '  |
             // | GUI |  Z  |  X  |  C   |  V   |  B              | NONE | NONE |  | NONE | NONE |  K   |  M    |  ,    |  .   |   /   | MEDIA |
-            //                     | DEL  | RET  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  | TAB  | FUN |
+            //                     | DEL  |  TAB  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  |  RET  | FUN |
             bindings = <
             &kp ESC  &kp Q &kp W &kp F &kp P &kp G                                                          &kp J &kp L  &kp U     &kp Y   &kp SEMI    &tog MOUSE
-            &td_alt &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
+            &ht_ahct &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
             &kp LGUI &kp Z &kp X &kp C &kp V &kp B             &none &none          &none &none             &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &tog MEDIA
                                 &kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
@@ -115,6 +124,20 @@
             &kp SEMI  &kp N0 &kp N4 &kp N5 &kp N6 &kp EQUAL                                                     &none &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI &none
             &kp NUHS   &kp KP_MINUS &kp N1 &kp N2 &kp N3 &kp KP_DIVIDE     &none &none               &none &none  &none &none  &none &none &none &none
                                 &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
+            >;
+        };
+        
+        nav_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  NONE  |  NONE  |  NONE  |  NONE  |  NONE   |  NONE   |                                           |  NONE   |  :    |  ;    |  `   |   NONE   |   NONE  |
+            // |  NONE  |  GUI  |  LALT  |  LCTRL   |  LSHIFT  |  NONE   |                                           |  NONE   |  _    |  "    |   \  |   NONE   |   NONE  |
+            // |  NONE   |  NONE  |  NONE  |  NONE   |  NONE   |  NONE   | NONE | NONE |              | NONE | SYM |  NONE   |  <    |  >    |  ^   |   NONE   | NONE |
+            //                     |  NONE  | NONE  | NONE  |  NONE  |   NONE   |                      | RCTRL | RSHIFT | SPACE  |  RET  | FUN |
+            bindings = <
+            &none  &none &none &none &none &none                                                          &none &none  &none     &none   &none    &none
+            &none &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none                                                           &none &kp LEFT  &kp DOWN  &kp UP &kp RIGHT &none
+            &none &none &none &none &none &none       &none &none          &none &none             &none &none  &none &none &none &none
+                                &none &none &none &none &none         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
         };
     };
