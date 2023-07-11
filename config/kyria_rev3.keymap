@@ -62,14 +62,14 @@
             bindings = <&kp LSHIFT>, <&caps_word>;
         };
 
-        ht_ahct: alt_hold_caps_tap {
+        ahct: alt_hold_caps_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "ALT_HOLD_CAPS_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <200>;
-            bindings = <&kp CAPS>, <&kp LALT>;
+            bindings = <&kp>, <&kp>;
         };
     };
  };
@@ -86,7 +86,7 @@
             //                     | DEL  |  TAB  | BSPC  |  SPACE  |   LCTRL   |  |   RCTRL   |  RSHIFT  | SPACE  |  RET  | FUN |
             bindings = <
             &kp ESC  &kp Q &kp W &kp F &kp P &kp G                                                          &kp J &kp L  &kp U     &kp Y   &kp SEMI    &tog MOUSE
-            &ht_ahct &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
+            &ahct CAPS LALT &kp A &kp R &kp S &kp T &kp D                                                           &kp H &kp N  &kp E     &kp I   &kp O &kp SQT
             &kp LGUI &kp Z &kp X &kp C &kp V &kp B             &none &none          &none &none             &kp K &kp M  &kp COMMA &kp DOT &kp FSLH &tog MEDIA
                                 &kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
