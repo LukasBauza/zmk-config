@@ -62,13 +62,6 @@
             bindings = <&kp LSHIFT>, <&caps_word>;
         };
 
-        td_alt: tap_dance_caps_word {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp LALT>, <&kp CAPS>;
-        };
         ht_ahct: alt_hold_caps_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "ALT_HOLD_CAPS_TAP";
