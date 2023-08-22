@@ -109,13 +109,13 @@
         num_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  !  |  &  |  7  |  8   |  9   |  +   |                                           |  NONE   |  NONE    |  NONE    |  NONE   |   NONE   |   NONE  |
-            // |  ~  |  0  |  4  |  5   |  6   |  -   |                                           |  NONE   |  RSHIFT    |  RCTRL    |  ALT   |   RGUI   |   NONE  |
-            // |  $   |  |  |  1  |  2   |  3   |  /   | NONE | NONE |              | NONE | SYM |  NONE   |  NONE    |  NONE    |  NONE   |   NONE   | NONE |
+            // |  ~  |  0  |  4  |  5   |  6   |  -   |                                           |  NONE   |  RSHIFT    |  RCTRL    |  LALT   |   RGUI   |   NONE  |
+            // |  $   |  |  |  1  |  2   |  3   |  /   | NONE | NONE |              | NONE | SYM |  NONE   |  NONE    |  NONE    |  RALT   |   NONE   | NONE |
             //                     | DEL  | RET  | BSPC  |  LSHIFT  |   CTRL   |    | NONE | SYM | NONE  | NONE  | NONE |
             bindings = <
             &kp EXCL   &kp AMPS &kp N7 &kp N8 &kp N9 &kp KP_PLUS                                                         &none &kp BSLH  &none     &none   &none    &none
-            &kp TILDE2  &kp N0 &kp N4 &kp N5 &kp N6 &kp KP_MINUS                                                     &none &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI &none
-            &kp DLLR   &kp PIPE2 &kp N1 &kp N2 &kp N3 &kp KP_SLASH     &none &none               &none &none  &none &none  &none &none &none &none
+            &kp TILDE2  &kp N0 &kp N4 &kp N5 &kp N6 &kp KP_MINUS                                                     &none &kp RSHIFT  &kp RCTRL  &kp LALT   &kp RGUI &none
+            &kp DLLR   &kp PIPE2 &kp N1 &kp N2 &kp N3 &kp KP_SLASH     &none &none               &none &none  &none &none  &none &kp RALT &none &none
                                 &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
             >;
         };
@@ -124,12 +124,12 @@
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  NONE  |  NONE  |  NONE  |  NONE  |  NONE   |  NONE   |                                           |  NONE   |  :    |  ;    |  `   |   NONE   |   NONE  |
             // |  NONE  |  GUI  |  LALT  |  LCTRL   |  LSHIFT  |  NONE   |                                           |  NONE   |  _    |  "    |   \  |   NONE   |   NONE  |
-            // |  NONE   |  NONE  |  NONE  |  NONE   |  NONE   |  NONE   | NONE | NONE |              | NONE | SYM |  NONE   |  <    |  >    |  ^   |   NONE   | NONE |
+            // |  NONE   |  NONE  |  RALT  |  NONE   |  NONE   |  NONE   | NONE | NONE |              | NONE | SYM |  NONE   |  <    |  >    |  ^   |   NONE   | NONE |
             //                     |  NONE  | NONE  | NONE  |  NONE  |   NONE   |                      | RCTRL | RSHIFT | SPACE  |  RET  | FUN |
             bindings = <
             &none  &none &none &none &none &none                                                          &none &none  &none     &none   &none    &none
             &none &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none                                                           &none &kp LEFT  &kp DOWN  &kp UP &kp RIGHT &none
-            &none &none &none &none &none &none       &none &none          &none &none             &none &none  &none &none &none &none
+            &none &none &kp RALT &none &none &none       &none &none          &none &none             &none &none  &none &none &none &none
                                 &none &none &none &none &none         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
         };
