@@ -28,20 +28,17 @@
         compatible = "zmk,combos";
         combo_nav {
             timeout-ms = <50>;
-            key-positions = <30 43>;
-            //layers = <BASE NAV>;
+            key-positions = <31 44>;
             bindings = <&tog NAV>;
         };
         combo_num {
             timeout-ms = <50>;
-            key-positions = <32 45>;
-            //layers = <BASE NUM>;
+            key-positions = <30 43>;
             bindings = <&tog NUM>;
         };
         combo_sym {
             timeout-ms = <50>;
             key-positions = <33 46>;
-            //layers = <BASE SYM>;
             bindings = <&tog SYM>;
         };
     };
