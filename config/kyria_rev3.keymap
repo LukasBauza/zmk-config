@@ -39,7 +39,7 @@
         combo_sym {
             timeout-ms = <50>;
             key-positions = <33 46>;
-            bindings = <&lt SYM>;
+            bindings = <&to SYM>;
         };
     };
 };
