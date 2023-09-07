@@ -26,9 +26,16 @@
  / {
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_esc0 {
             timeout-ms = <50>;
-            key-positions = <31 44>;
+            key-positions = <30 43>;
+            layers = <NAV NUM SYM>
+            bindings = <&tog BASE>;
+        };
+        combo_esc1 {
+            timeout-ms = <50>;
+            key-positions = <33 46>;
+            layers = <NAV NUM SYM>
             bindings = <&tog BASE>;
         };
         combo_nav {
