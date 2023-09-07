@@ -94,7 +94,7 @@
             &kp AMPS   &kp EXCL &kp LBRC &kp RBRC &kp KP_ASTERISK &kp KP_PLUS                                                         &kp CARET &kp COLON  &kp SEMI   &kp GRAVE   &none    &none
             &kp TILDE2  &kp NUHS &kp LPAR &kp RPAR &kp EQUAL &kp KP_MINUS                                                     &kp LT &kp UNDER  &kp AT  &kp NUBS   &none  &none
             &kp DLLR   &kp PIPE2 &kp LBKT &kp RBKT &kp PRCNT &kp KP_SLASH     &none &none               &none &none  &kp GT &none  &none &none &none &none
-                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
         };
 
@@ -108,7 +108,7 @@
             &kp AMPS   &kp EXCL &kp N7 &kp N8 &kp N9 &kp KP_PLUS                                                         &none &kp BSLH  &none     &none   &none    &none
             &kp TILDE2  &kp N0 &kp N4 &kp N5 &kp N6 &kp KP_MINUS                                                     &none &kp RSHIFT  &kp RCTRL  &kp LALT   &kp RGUI &none
             &kp DLLR   &kp PIPE2 &kp N1 &kp N2 &kp N3 &kp KP_SLASH     &none &none               &none &none  &none &none  &none &kp RALT &none &none
-                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &none  &none &none &none &none
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
         };
         
@@ -122,7 +122,7 @@
             &none  &none &none &none &none &none                                                          &none &none  &none     &none   &none    &none
             &none &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none                                                           &none &kp LEFT  &kp DOWN  &kp UP &kp RIGHT &none
             &none &none &kp RALT &none &none &none       &none &none          &none &none             &none &none  &none &none &none &none
-                                &none &none &none &none &none         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
+                                &kp DEL &kp RET &kp BSPC &td_lshift &kp LCTRL         &kp RCTRL  &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
             >;
         };
     };
