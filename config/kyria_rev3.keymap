@@ -26,17 +26,29 @@
  / {
     combos {
         compatible = "zmk,combos";
-        combo_base0 {
+        combo_sym->base0 {
             timeout-ms = <50>;
             key-positions = <30 43>;
-            layers = <SYM NAV MOUSE MEDIA FUN>;
-            bindings = <&tog BASE>;
+            layers = <SYM>;
+            bindings = <&tog SYM>;
         };
-        combo_base1 {
+        combo_num->base0 {
             timeout-ms = <50>;
             key-positions = <33 46>;
-            layers = <NUM NAV MOUSE MEDIA FUN>;
-            bindings = <&tog BASE>;
+            layers = <NUM>;
+            bindings = <&tog NUM>;
+        };
+        combo_nav->base0 {
+            timeout-ms = <50>;
+            key-positions = <30 43>;
+            layers = <NAV>;
+            bindings = <&tog NAV>;
+        };
+        combo_nav->base1 {
+            timeout-ms = <50>;
+            key-positions = <33 46>;
+            layers = <NAV>;
+            bindings = <&tog NAV>;
         };
         combo_nav {
             timeout-ms = <50>;
