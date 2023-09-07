@@ -25,23 +25,24 @@
  
  / {
     combos {
+        compatible = "zmk,combos";
         combo_nav {
             timeout-ms = <50>;
             key-positions = <30 43>;
-            layers = <BASE NAV>;
-            bindings = <&mo NAV>;
+            //layers = <BASE NAV>;
+            bindings = <&tog NAV>;
         };
         combo_num {
             timeout-ms = <50>;
             key-positions = <32 45>;
-            layers = <BASE NUM>;
-            bindings = <&mo NUM>;
+            //layers = <BASE NUM>;
+            bindings = <&tog NUM>;
         };
         combo_sym {
             timeout-ms = <50>;
             key-positions = <33 46>;
-            layers = <BASE SYM>;
-            bindings = <&mo SYM>;
+            //layers = <BASE SYM>;
+            bindings = <&tog SYM>;
         };
     };
 };
