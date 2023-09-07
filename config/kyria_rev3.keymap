@@ -53,7 +53,7 @@
         combo_sym {
             timeout-ms = <50>;
             key-positions = <33 46>;
-            layers = <BASE>;
+            layers = <SYM>;
             bindings = <&tog SYM>;
         };
     };
