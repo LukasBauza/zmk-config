@@ -108,7 +108,7 @@
             //                   | DEL | RET | BSPC | LSHIFT | CTRL |   %   | NONE | SYM | NONE | NONE  | NONE   |
             bindings = <
             &kp GRAVE &kp TILDE2 &kp LBRC &kp RBRC &kp AT       &kp KP_PLUS                                        &none &none     &none      &none    &none    &none
-            &kp DLLR  &kp NUHS   &kp LPAR &kp RPAR &kp UNDER    &kp KP_MINUS                                       &none &kp RCTRL &kp RSHIFT &kp LALT &kp RGUI &none
+            &kp DLLR  &kp NUHS   &kp LPAR &kp RPAR &kp UNDER    &kp PIPE2                                          &none &kp RCTRL &kp RSHIFT &kp LALT &kp RGUI &none
             &kp LT    &kp GT     &kp LBKT &kp RBKT &kp KP_SLASH &kp AMPS     &none      &none          &none &none &none &none     &none      &none    &none    &none
                                           &kp DEL  &kp RET      &kp BSPC     &td_lshift &kp LCTRL      &none &none &none &none     &none
             >;
