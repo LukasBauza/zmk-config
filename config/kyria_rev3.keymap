@@ -107,7 +107,7 @@
             // |  <  |  >  |  [  |  ]  |  \  |  &   |  NONE  | NONE |   %   | NONE | SYM | NONE | NONE  | NONE   | NONE  | NONE | NONE |
             //                   | DEL | RET | BSPC | LSHIFT | CTRL |   %   | NONE | SYM | NONE | NONE  | NONE   |
             bindings = <
-            &kp GRAVE &kp TILDE2 &kp LBRC &kp RBRC &kp AT       &kp KP_PLUS                                        &none &none     &none      &none    &none    &none
+            &kp GRAVE &kp TILDE2 &kp LBRC &kp RBRC &kp AT       &kp EXCL                                           &none &none     &none      &none    &none    &none
             &kp DLLR  &kp NUHS   &kp LPAR &kp RPAR &kp UNDER    &kp PIPE2                                          &none &kp RCTRL &kp RSHIFT &kp LALT &kp RGUI &none
             &kp LT    &kp GT     &kp LBKT &kp RBKT &kp KP_SLASH &kp AMPS     &none      &none          &none &none &none &none     &none      &none    &none    &none
                                           &kp DEL  &kp RET      &kp BSPC     &td_lshift &kp LCTRL      &none &none &none &none     &none
@@ -116,10 +116,10 @@
 
         num_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // | NONE | NONE | NONE | NONE   | NONE  | NONE |                %                 | +    | 7    | 8    | 9 | * | ^    |
-            // | NONE | LGUI | LALT | LSHIFT | LCTRL | NONE |                %                 | =    | 4    | 5    | 6 | 0 | NONE |
-            // | NONE | NONE | NONE | NONE   | NONE  | NONE | NUM | NONE |   %   | NONE | NONE | -    | 1    | 2    | 3 | / | %    |
-            //                      | NONE   | NONE  | NONE | NUM | NONE |   %   | RCTRL | RSHIFT | SPACE | RET | FUN |
+            // | NONE | NONE | NONE | NONE   | NONE  | NONE |                %                     | +     | 7   | 8   | 9 | * | ^    |
+            // | NONE | LGUI | LALT | LSHIFT | LCTRL | NONE |                %                     | =     | 4   | 5   | 6 | 0 | NONE |
+            // | NONE | NONE | NONE | NONE   | NONE  | NONE | NUM | NONE |   %   | NONE  | NONE    | -     | 1   | 2   | 3 | / | %    |
+            //                      | NONE   | NONE  | NONE | NUM | NONE |   %   | RCTRL | RSHIFT  | SPACE | RET | FUN |
             bindings = <
             &none &none    &none    &none      &none     &none                                 &kp KP_PLUS   &kp N7  &kp N8 &kp N9 &kp KP_ASTERISK &kp CARET
             &none &kp LGUI &kp LALT &kp LSHIFT &kp LCTRL &none                                 &kp EQUAL     &kp N4  &kp N5 &kp N6 &kp N0          &none
