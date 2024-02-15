@@ -43,7 +43,7 @@
         combo_nav {
             timeout-ms = <50>;
             key-positions = <31 44>;
-            bindings = <&tog NAV>;
+            bindings = <&mo NAV>;
         };
         combo_num {
             timeout-ms = <50>;
@@ -88,15 +88,15 @@
 
         base_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  ESC        | Q | W | E   | R   | T    |                     %                    | Y     | U   | I   | O | P | MOUSE |
-            // |  CAPSW/ALT  | A | S | D   | F   | G    |                     %                    | H     | J   | K   | L | ; | '     |
-            // |  GUI        | Z | X | C   | V   | B    | NONE   | NONE   |   %   | NONE  | NONE   | N     | M   | ,   | . | / | MEDIA |
-            //                       | DEL | TAB | BSPC | LSHIFT | LCTRL  |   %   | RCTRL | RSHIFT | SPACE | RET | FUN |
+            // |  ESC        | Q      | W      | E        | R       | T    |                     %                    | Y          | U       | I        | O      | P      | MOUSE |
+            // |  CAPSW/ALT  | A/LGUI | S/LALT | D/LSHIFT | F/LCTRL | G    |                     %                    | H          | J/RCTRL | K/RSHIFT | L/LALT | ;/RGUI | '     |
+            // |  GUI        | Z      | X      | C        | V       | B    | NONE   | NONE   |   %   | NONE  | NONE   | N          | M       | ,        | .      | /      | MEDIA |
+            //                                 | DEL      | TAB     | BSPC | LSHIFT | LCTRL  |   %   | RCTRL | RSHIFT | SPACE/RALT | RET     | FUN      |
             bindings = <
-            &kp ESC 	    &kp Q &kp W &kp E   &kp R   &kp T                                                   &kp Y          &kp U   &kp I     &kp O   &kp P    &tog MOUSE
-            &ahct LALT CAPS &kp A &kp S &kp D   &kp F   &kp G                                                   &kp H          &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-            &kp LGUI 	    &kp Z &kp X &kp C   &kp V   &kp B    &none      &none          &none     &none      &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH &tog MEDIA
-					&kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL      &kp RCTRL &kp RSHIFT &mt RALT SPACE &kp RET &mo FUN
+            &kp ESC 	    &kp Q      &kp W      &kp E          &kp R       &kp T                                                    &kp Y          &kp U       &kp I        &kp O      &kp P         &tog MOUSE
+            &ahct LALT CAPS &mt LGUI A &mt LALT S &mt LSHIFT D   &mt LCTRL F &kp G                                                    &kp H          &mt RCTRL J &mt RSHIFT K &mt LALT L &mt RGUI SEMI &kp SQT
+            &kp LGUI 	    &kp Z      &kp X      &kp C          &kp V       &kp B    &none       &none          &none     &none      &kp N          &kp M       &kp COMMA    &kp DOT    &kp FSLH      &tog MEDIA
+					                              &kp DEL        &kp TAB     &kp BSPC &td_lshift  &kp LCTRL      &kp RCTRL &kp RSHIFT &mt RALT SPACE &kp RET     &mo FUN
             >;
         };
 
