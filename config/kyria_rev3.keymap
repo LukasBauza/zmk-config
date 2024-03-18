@@ -87,12 +87,12 @@
             // ---------------------------------------------------------------------------------------------------------------------------------
             // |  ESC        | Q | W | E   | R   | T    |                     %                    | Y     | U   | I   | O | P | MOUSE |
             // |  CAPSW/ALT  | A | S | D   | F   | G    |                     %                    | H     | J   | K   | L | ; | '     |
-            // |  GUI        | Z | X | C   | V   | B    | NONE   | NONE   |   %   | NONE  | NONE   | N     | M   | ,   | . | / | MEDIA |
+            // |  WIN        | Z | X | C   | V   | B    | NONE   | NONE   |   %   | NONE  | NONE   | N     | M   | ,   | . | / | MEDIA |
             //                       | DEL | TAB | BSPC | LSHIFT | LCTRL  |   %   | RCTRL | RSHIFT | SPACE | RET | FUN |
             bindings = <
             &kp ESC 	    &kp Q &kp W &kp E   &kp R   &kp T                                                      &kp Y          &kp U   &kp I     &kp O   &kp P    &tog MOUSE
             &ahct LALT CAPS &kp A &kp S &kp D   &kp F   &kp G                                                      &kp H          &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-            &kp LGUI 	    &kp Z &kp X &kp C   &kp V   &kp B     &none      &none          &none          &none   &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH &tog MEDIA
+            &kp LWIN 	    &kp Z &kp X &kp C   &kp V   &kp B     &none      &none          &none          &none   &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH &tog MEDIA
 					&kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL &kp RCTRL  &kp RSHIFT     &mt RALT SPACE &kp RET &mo FUN
             >;
         };
@@ -102,12 +102,12 @@
             // |  `  |  ~  |  {  |  }   |  "   |  !   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
             // |  $  |  #  |  (  |  )   |  _   |  |   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
             // |  <  |  >  |  [  |  ]   |  \   |  &   |  NONE  | NONE |   %   | NONE | NONE   | NONE | NONE | NONE | NONE | NONE | NONE |
-            //                   | NONE | LALT | RGUI | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RGUI | LALT | NONE |
+            //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
             bindings = <
             &kp GRAVE &kp TILDE2 &kp LBRC &kp RBRC &kp AT    &kp EXCL                                                  &none    &none    &none &none &none &none
             &kp DLLR  &kp NUHS   &kp LPAR &kp RPAR &kp UNDER &kp PIPE2                                                 &none    &none    &none &none &none &none
             &kp LT    &kp GT     &kp LBKT &kp RBKT &kp NUBS  &kp AMPS  &none      &none          &none     &none      &none    &none    &none &none &none &none
-                                          &none    &kp LALT  &kp LGUI  &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RGUI &kp LALT &none
+                                          &none    &kp LALT  &kp LWIN  &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN &kp LALT &none
             >;
         };
 
@@ -116,26 +116,26 @@
             // | NONE | NONE | NONE | NONE | NONE | NONE |                   %                    | +    | 7    | 8    | 9 | * | ^    |
             // | NONE | NONE | NONE | NONE | NONE | NONE |                   %                    | =    | 4    | 5    | 6 | 0 | NONE |
             // | NONE | NONE | NONE | NONE | NONE | NONE | NUM    | NONE |   %   | NONE  | NONE   | -    | 1    | 2    | 3 | / | %    |
-            //                      | NONE | LALT | RGUI | LSHIFT | CTRL |   %   | CTRL  | RSHIFT | RGUI | LALT | NONE |
+            //                      | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL  | RSHIFT | RWIN | LALT | NONE |
             bindings = <
             &none &none &none &none &none    &none                                                     &kp KP_PLUS  &kp N7   &kp N8 &kp N9 &kp KP_ASTERISK &kp CARET
             &none &none &none &none &none    &none                                                     &kp EQUAL    &kp N4   &kp N5 &kp N6 &kp N0          &none
             &none &none &none &none &none    &none    &none      &none          &none     &none      &kp KP_MINUS &kp N1   &kp N2 &kp N3 &kp KP_SLASH    &kp PRCNT
-                              &none &kp LALT &kp LGUI &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RGUI     &kp LALT &none
+                              &none &kp LALT &kp LWIN &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN     &kp LALT &none
             >;
         };
         
         nav_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // | NONE | NONE | NONE | NONE   | NONE  | NONE |                   %                   | NONE | NONE | NONE | NONE  | NONE | NONE |
-            // | NONE | GUI  | LALT | LSHIFT | LCTRL | NONE |                   %                   | LEFT | DOWN | UP   | RIGHT | NONE | NONE |
+            // | NONE | WIN  | LALT | LSHIFT | LCTRL | NONE |                   %                   | LEFT | DOWN | UP   | RIGHT | NONE | NONE |
             // | NONE | NONE | NONE | NONE   | NONE  | NONE | NONE   | NAV  |   %   | NONE | SYM    | NONE | NONE | NONE | NONE  | NONE | NONE |
-            //                      | NONE   | LALT  | RGUI | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RGUI | LALT | NONE |
+            //                      | NONE   | LALT  | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
             bindings = <
             &none &none &none &none &none      &none                                                       &none    &none    &none  &none     &none &none
             &none &none &none &none &none      &none                                                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
             &none &none &none &none &none      &none     &none       &none          &none     &none      &none    &none    &none  &none     &none &none
-                              &none &kp LALT   &kp LGUI  &kp LSHIFT  &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RGUI &kp LALT &none
+                              &none &kp LALT   &kp LWIN  &kp LSHIFT  &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN &kp LALT &none
             >;
         };
     };
