@@ -50,7 +50,7 @@
         };
         combo_sym {
             timeout-ms = <50>;
-            key-positions = <18 19>;
+            key-positions = <19 20>;
             layers = <BASE>;
             bindings = <&mo SYM>;
         };
