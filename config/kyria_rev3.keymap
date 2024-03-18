@@ -38,7 +38,7 @@
         compatible = "zmk,combos";
         combo_nav {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
             layers = <BASE>;
             bindings = <&mo NAV>;
         };
