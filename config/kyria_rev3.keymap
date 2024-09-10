@@ -3,15 +3,12 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-
- // Keyboard Key Layout
- // ---------------------------------------------------------------------------------------------------------------------------------
- // |   1    |   2    |   3    |   4    |   5    |   6    |                     %                     |   7    |   8    |   9    |   10   |   11   |   12   |
- // |   13   |   14   |   15   |   16   |   17   |   18   |                     %                     |   19   |   20   |   21   |   22   |   23   |   24   |
- // |   25   |   26   |   27   |   28   |   29   |   30   |   31   |   32   |   %   |   33   |   34   |   35   |   36   |   37   |   38   |   39   |   40   |
- //                            |   41   |   42   |   43   |   44   |   45   |   %   |   46   |   47   |   48   |   49   |   50   |
-  
+// Keyboard Key Layout
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |   1    |   2    |   3    |   4    |   5    |   6    |                     %                     |   7    |   8    |   9    |   10   |   11   |   12   |
+// |   13   |   14   |   15   |   16   |   17   |   18   |                     %                     |   19   |   20   |   21   |   22   |   23   |   24   |
+// |   25   |   26   |   27   |   28   |   29   |   30   |   31   |   32   |   %   |   33   |   34   |   35   |   36   |   37   |   38   |   39   |   40   |
+//                            |   41   |   42   |   43   |   44   |   45   |   %   |   46   |   47   |   48   |   49   |   50   |
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -31,28 +28,14 @@
     // chain-length = <25>; // Uncomment if using only per-key LEDs.
 };
  */
- 
- / {
 
+/ {
     combos {
         compatible = "zmk,combos";
-        combo_nav {
-            timeout-ms = <50>;
-            key-positions = <14 15>;
-            layers = <BASE>;
-            bindings = <&mo NAV>;
-        };
-        combo_num {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            layers = <BASE>;
-            bindings = <&mo NUM>;
-        };
-        combo_sym {
-            timeout-ms = <50>;
-            key-positions = <19 20>;
-            layers = <BASE>;
-            bindings = <&mo SYM>;
+
+        f_keys {
+            bindings = <&mo 4>;
+            key-positions = <30 43>;
         };
     };
 };
@@ -67,18 +50,36 @@
             bindings = <&kp LSHIFT>, <&caps_word>;
         };
 
-        ahct: alt_hold_caps_tap {
+        holdPref_tap: holdPref_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "ALT_HOLD_CAPS_TAP";
+            label = "HOLDPREF_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
+
+        td_caps: td_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CAPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&caps_word>, <&kp CAPSLOCK>;
+        };
+
+        hold_tapPref: hold_tapPref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAPPREF";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
     };
- };
- 
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -89,25 +90,12 @@
             // |  CAPSW/ALT  | A | S | D   | F   | G    |                     %                    | H     | J   | K   | L | ; | '     |
             // |  WIN        | Z | X | C   | V   | B    | NONE   | NONE   |   %   | NONE  | NONE   | N     | M   | ,   | . | / | MEDIA |
             //                       | DEL | TAB | BSPC | LSHIFT | LCTRL  |   %   | RCTRL | RSHIFT | SPACE | RET | FUN |
-            bindings = <
-            &kp ESC 	    &kp Q &kp W &kp E   &kp R   &kp T                                                      &kp Y          &kp U   &kp I     &kp O   &kp P    &tog MOUSE
-            &ahct LALT CAPS &kp A &kp S &kp D   &kp F   &kp G                                                      &kp H          &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-            &kp LWIN 	    &kp Z &kp X &kp C   &kp V   &kp B     &none      &none          &none          &none   &kp N          &kp M   &kp COMMA &kp DOT &kp FSLH &tog MEDIA
-					&kp DEL &kp TAB &kp BSPC &td_lshift &kp LCTRL &kp RCTRL  &kp RSHIFT     &mt RALT SPACE &kp RET &mo FUN
-            >;
-        };
 
-        sym_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  `  |  ~  |  {  |  }   |  "   |  !   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
-            // |  $  |  #  |  (  |  )   |  _   |  |   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
-            // |  <  |  >  |  [  |  ]   |  \   |  &   |  NONE  | NONE |   %   | NONE | NONE   | NONE | NONE | NONE | NONE | NONE | NONE |
-            //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
             bindings = <
-            &kp GRAVE &kp TILDE2 &kp LBRC &kp RBRC &kp AT    &kp EXCL                                                  &none    &none    &none &none &none &none
-            &kp DLLR  &kp NUHS   &kp LPAR &kp RPAR &kp UNDER &kp PIPE2                                                 &none    &none    &none &none &none &none
-            &kp LT    &kp GT     &kp LBKT &kp RBKT &kp NUBS  &kp AMPS  &none      &none          &none     &none      &none    &none    &none &none &none &none
-                                          &none    &kp LALT  &kp LWIN  &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN &kp LALT &none
+&kp ESC   &kp Q  &kp W                     &kp E                         &kp R                       &kp T                                           &kp Y      &kp U                        &kp I                          &kp O                      &kp P     &trans
+&td_caps  &kp A  &hold_tapPref S LEFT_ALT  &hold_tapPref LEFT_CONTROL D  &hold_tapPref LEFT_SHIFT F  &kp G                                           &kp H      &hold_tapPref RIGHT_SHIFT J  &hold_tapPref RIGHT_CONTROL K  &hold_tapPref RIGHT_ALT L  &kp SEMI  &kp SQT
+&kp LWIN  &kp Z  &kp X                     &kp C                         &kp V                       &kp B     &trans     &trans  &trans  &trans     &kp N      &kp M                        &kp COMMA                      &kp DOT                    &kp FSLH  &kp RGUI
+                                           &trans                        &kp DEL                     &kp BSPC  &lt 1 TAB  &mo 3   &trans  &lt 2 RET  &kp SPACE  &trans                       &trans
             >;
         };
 
@@ -117,25 +105,51 @@
             // | NONE | NONE | NONE | NONE | NONE | NONE |                   %                    | =    | 4    | 5    | 6 | 0 | NONE |
             // | NONE | NONE | NONE | NONE | NONE | NONE | NUM    | NONE |   %   | NONE  | NONE   | -    | 1    | 2    | 3 | / | %    |
             //                      | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL  | RSHIFT | RWIN | LALT | NONE |
+
             bindings = <
-            &none &none &none &none &none    &none                                                     &kp KP_PLUS  &kp N7   &kp N8 &kp N9 &kp KP_ASTERISK &kp CARET
-            &none &none &none &none &none    &none                                                     &kp EQUAL    &kp N4   &kp N5 &kp N6 &kp N0          &none
-            &none &none &none &none &none    &none    &none      &none          &none     &none      &kp KP_MINUS &kp N1   &kp N2 &kp N3 &kp KP_SLASH    &kp PRCNT
-                              &none &kp LALT &kp LWIN &kp LSHIFT &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN     &kp LALT &none
+&trans    &trans  &trans        &trans            &trans          &trans                                       &kp KP_MULTIPLY  &kp N7     &kp N8  &kp N9  &kp CARET  &trans
+&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                       &kp KP_SLASH     &kp N4     &kp N5  &kp N6  &kp DOT    &trans
+&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans    &trans     &kp PRCNT        &kp N1     &kp N2  &kp N3  &trans     &trans
+                                &trans            &trans          &trans  &trans  &trans  &kp PLUS  &kp MINUS  &kp N0           &kp EQUAL  &trans
             >;
         };
-        
+
+        sym_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  `  |  ~  |  {  |  }   |  "   |  !   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
+            // |  $  |  #  |  (  |  )   |  _   |  |   |                   %                   | NONE | NONE | NONE | NONE | NONE | NONE |
+            // |  <  |  >  |  [  |  ]   |  \   |  &   |  NONE  | NONE |   %   | NONE | NONE   | NONE | NONE | NONE | NONE | NONE | NONE |
+            //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
+
+            bindings = <
+&kp GRAVE  &kp PIPE2   &kp AMPS  &kp LBKT  &kp RBKT      &kp DLLR                                       &trans  &trans           &trans             &trans         &trans  &trans
+&kp GT     &kp EXCL    &kp AT    &kp LBRC  &kp RBRC      &kp EQUAL                                      &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans  &trans
+&kp LT     &kp TILDE2  &kp NUBS  &kp LBKT  &kp RBKT      &kp NUHS   &trans    &trans    &trans  &trans  &trans  &trans           &trans             &trans         &trans  &kp RIGHT_GUI
+                                 &trans    &kp KP_MINUS  &kp UNDER  &kp LPAR  &kp RPAR  &trans  &trans  &trans  &trans           &trans
+            >;
+        };
+
         nav_layer {
             // ---------------------------------------------------------------------------------------------------------------------------------
             // | NONE | NONE | NONE | NONE   | NONE  | NONE |                   %                   | NONE | NONE | NONE | NONE  | NONE | NONE |
             // | NONE | WIN  | LALT | LSHIFT | LCTRL | NONE |                   %                   | LEFT | DOWN | UP   | RIGHT | NONE | NONE |
             // | NONE | NONE | NONE | NONE   | NONE  | NONE | NONE   | NAV  |   %   | NONE | SYM    | NONE | NONE | NONE | NONE  | NONE | NONE |
             //                      | NONE   | LALT  | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
+
             bindings = <
-            &none &none &none &none &none      &none                                                       &none    &none    &none  &none     &none &none
-            &none &none &none &none &none      &none                                                       &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
-            &none &none &none &none &none      &none     &none       &none          &none     &none      &none    &none    &none  &none     &none &none
-                              &none &kp LALT   &kp LWIN  &kp LSHIFT  &kp LCTRL      &kp RCTRL &kp RSHIFT &kp RWIN &kp LALT &none
+&trans    &trans  &trans        &trans            &trans          &trans                                          &kp K_REDO     &kp K_PASTE    &kp K_COPY   &kp K_CUT  &trans      &trans
+&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                          &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT  &kp K_UNDO  &trans
+&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans      &trans      &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans      &trans
+                                &trans            &trans          &trans  &trans  &trans  &kp INSERT  &kp RETURN  &kp BACKSPACE  &kp DELETE     &trans
+            >;
+        };
+
+        f_keys {
+            bindings = <
+&trans    &trans  &trans        &trans            &trans          &trans                                    &kp PRINTSCREEN  &kp F7      &kp F8  &kp F9  &trans  &trans
+&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                    &kp SCROLLLOCK   &kp F4      &kp F5  &kp F6  &trans  &trans
+&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans   &trans   &kp PAUSE_BREAK  &kp F1      &kp F2  &kp F3  &trans  &trans
+                                &trans            &trans          &trans  &trans  &trans  &kp F12  &kp F11  &kp F10          &kp SYSREQ  &trans
             >;
         };
     };
