@@ -76,6 +76,16 @@
             bindings = <&kp RIGHT_ALT>;
             key-positions = <19 21>;
         };
+
+        left_gui {
+            bindings = <&kp LGUI>;
+            key-positions = <16 15 14>;
+        };
+
+        right_gui {
+            bindings = <&kp RGUI>;
+            key-positions = <19 20 21>;
+        };
     };
 };
 
