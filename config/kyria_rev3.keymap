@@ -46,46 +46,6 @@
             bindings = <&mo 5>;
             key-positions = <31 44>;
         };
-
-        left_shift {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <16 15>;
-        };
-
-        left_control {
-            bindings = <&kp LEFT_CONTROL>;
-            key-positions = <15 14>;
-        };
-
-        left_alt {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <16 14>;
-        };
-
-        right_shift {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <19 20>;
-        };
-
-        right_control {
-            bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <20 21>;
-        };
-
-        right_alt {
-            bindings = <&kp RIGHT_ALT>;
-            key-positions = <19 21>;
-        };
-
-        left_gui {
-            bindings = <&kp LGUI>;
-            key-positions = <4 3>;
-        };
-
-        right_gui {
-            bindings = <&kp RGUI>;
-            key-positions = <7 8>;
-        };
     };
 };
 
@@ -117,14 +77,32 @@
             bindings = <&caps_word>, <&kp CAPSLOCK>;
         };
 
-        hold_tap_balanced: hold_tap_balanced {
+        home_row_left: home_row_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_BALANCED";
+            label = "HOME_ROW_LEFT";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <24 12 0 1 13 25 14 2 26 27 28 29 17 4 3 15 16 5>;
+            require-prior-idle-ms = <125>;
+        };
+
+        home_row_right: home_row_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_RIGHT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 34 35 36 37 38 39 23 21 20 19 18 7 8 9 10 22 11>;
+            require-prior-idle-ms = <125>;
         };
     };
 };
@@ -141,10 +119,10 @@
             //                       | DEL | TAB | BSPC | LSHIFT | LCTRL  |   %   | RCTRL | RSHIFT | SPACE | RET | FUN |
 
             bindings = <
-&kp ESC   &kp Q  &kp W                          &kp E                              &kp R                            &kp T                                           &kp Y      &kp U                             &kp I                               &kp O                           &kp P     &trans
-&td_caps  &kp A  &hold_tap_balanced LEFT_ALT S  &hold_tap_balanced LEFT_CONTROL D  &hold_tap_balanced LEFT_SHIFT F  &kp G                                           &kp H      &hold_tap_balanced RIGHT_SHIFT J  &hold_tap_balanced RIGHT_CONTROL K  &hold_tap_balanced RIGHT_ALT L  &kp SEMI  &kp SQT
-&kp LWIN  &kp Z  &kp X                          &kp C                              &kp V                            &kp B     &trans     &trans  &trans  &trans     &kp N      &kp M                             &kp COMMA                           &kp DOT                         &kp FSLH  &kp RGUI
-                                                &trans                             &kp DEL                          &kp BSPC  &lt 1 TAB  &mo 3   &mo 6   &lt 2 RET  &kp SPACE  &trans                            &trans
+&kp ESC   &kp Q  &kp W                      &kp E                          &kp R                        &kp T                                           &kp Y      &kp U                          &kp I                            &kp O                        &kp P     &trans
+&td_caps  &kp A  &home_row_left LEFT_ALT S  &home_row_left LEFT_CONTROL D  &home_row_left LEFT_SHIFT F  &kp G                                           &kp H      &home_row_right RIGHT_SHIFT J  &home_row_right RIGHT_CONTROL K  &home_row_right RIGHT_ALT L  &kp SEMI  &kp SQT
+&kp LWIN  &kp Z  &kp X                      &kp C                          &kp V                        &kp B     &trans     &trans  &trans  &trans     &kp N      &kp M                          &kp COMMA                        &kp DOT                      &kp FSLH  &kp RGUI
+                                            &trans                         &kp DEL                      &kp BSPC  &lt 1 TAB  &mo 3   &mo 6   &lt 2 RET  &kp SPACE  &trans                         &trans
             >;
         };
 
