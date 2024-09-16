@@ -154,10 +154,10 @@
             //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
 
             bindings = <
-&trans  &kp PIPE2  &kp AMPS   &kp LBRC  &kp RBRC   &kp TILDE                                          &trans  &trans           &trans             &trans         &trans  &trans
-&trans  &kp EXCL   &kp AT     &kp LPAR  &kp RPAR   &kp DLLR                                           &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans  &trans
-&kp LT  &kp GT     &kp GRAVE  &kp LBKT  &kp RBKT   &kp NUHS   &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans         &trans  &kp RIGHT_GUI
-                              &trans    &kp EQUAL  &kp UNDER  &kp KP_MINUS  &kp NUBS  &trans  &trans  &trans  &trans           &trans
+&trans  &kp PIPE2  &kp AMPS   &kp LBRC  &kp RBRC   &kp TILDE2                                          &trans  &trans           &trans             &trans         &trans  &trans
+&trans  &kp EXCL   &kp AT     &kp LPAR  &kp RPAR   &kp DLLR                                            &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans  &trans
+&kp LT  &kp GT     &kp GRAVE  &kp LBKT  &kp RBKT   &kp NUHS    &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans         &trans  &kp RIGHT_GUI
+                              &trans    &kp EQUAL  &kp UNDER   &kp KP_MINUS  &kp NUBS  &trans  &trans  &trans  &trans           &trans
             >;
         };
 
