@@ -125,7 +125,7 @@
 
             bindings = <
 &kp ESC   &kp Q  &kp W                  &kp E                          &kp R           &kp T                                                &kp Y      &kp U            &kp I                            &kp O                   &kp P          &trans
-&td_caps  &kp A  &home_row_left LALT S  &home_row_left LEFT_CONTROL D  &kp F           &kp G                                                &kp H      &kp J            &home_row_right RIGHT_CONTROL K  &home_row_right RALT L  &kp SEMICOLON  &kp SQT
+&td_caps  &kp A  &home_row_left LALT S  &home_row_left LEFT_CONTROL D  &kp F           &kp G                                                &kp H      &kp J            &home_row_right RIGHT_CONTROL K  &home_row_right LALT L  &kp SEMICOLON  &kp SQT
 &kp LWIN  &kp Z  &kp X                  &kp C                          &kp V           &kp B          &trans     &trans  &trans  &trans     &kp N      &kp M            &kp COMMA                        &kp DOT                 &kp FSLH       &kp RGUI
                                         &trans                         &kp LEFT_SHIFT  &kp BACKSPACE  &lt 1 TAB  &mo 3   &mo 6   &lt 2 RET  &kp SPACE  &kp RIGHT_SHIFT  &trans
             >;
@@ -154,9 +154,9 @@
             //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
 
             bindings = <
-&trans  &kp PIPE2  &kp AMPS   &kp LBRC  &kp RBRC   &kp TILDE2                                          &trans  &trans           &trans             &trans         &trans  &trans
-&trans  &kp EXCL   &kp AT     &kp LPAR  &kp RPAR   &kp DLLR                                            &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans  &trans
-&kp LT  &kp GT     &kp GRAVE  &kp LBKT  &kp RBKT   &kp NUHS    &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans         &trans  &kp RIGHT_GUI
+&trans  &kp PIPE2  &kp AMPS   &kp LBRC  &kp RBRC   &kp TILDE2                                          &trans  &trans           &trans             &trans    &trans  &trans
+&trans  &kp EXCL   &kp AT     &kp LPAR  &kp RPAR   &kp DLLR                                            &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp LALT  &trans  &trans
+&kp LT  &kp GT     &kp GRAVE  &kp LBKT  &kp RBKT   &kp NUHS    &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans    &trans  &kp RIGHT_GUI
                               &trans    &kp EQUAL  &kp UNDER   &kp KP_MINUS  &kp NUBS  &trans  &trans  &trans  &trans           &trans
             >;
         };
