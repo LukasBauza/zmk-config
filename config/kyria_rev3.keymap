@@ -139,10 +139,10 @@
             //                      | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL  | RSHIFT | RWIN | LALT | NONE |
 
             bindings = <
-&trans    &trans  &trans        &trans            &trans          &trans                                       &kp KP_MULTIPLY  &kp N7     &kp N8  &kp N9  &kp CARET  &trans
-&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                       &kp KP_SLASH     &kp N4     &kp N5  &kp N6  &kp DOT    &trans
-&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans    &trans     &kp PRCNT        &kp N1     &kp N2  &kp N3  &trans     &trans
-                                &trans            &trans          &trans  &trans  &trans  &kp PLUS  &kp MINUS  &kp N0           &kp EQUAL  &trans
+&trans    &trans    &trans        &trans            &trans          &trans                                       &kp KP_MULTIPLY  &kp N7     &kp N8  &kp N9  &kp CARET  &trans
+&trans    &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                       &kp KP_SLASH     &kp N4     &kp N5  &kp N6  &kp DOT    &trans
+&kp LGUI  &trans    &trans        &trans            &trans          &trans  &trans  &trans  &trans    &trans     &kp PRCNT        &kp N1     &kp N2  &kp N3  &trans     &trans
+                                  &trans            &trans          &trans  &trans  &trans  &kp PLUS  &kp MINUS  &kp N0           &kp EQUAL  &trans
             >;
         };
 
@@ -154,9 +154,9 @@
             //                   | NONE | LALT | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
 
             bindings = <
-&kp GRAVE  &kp PIPE2  &kp AMPS     &kp LBRC  &kp RBRC   &kp TILDE2                                          &trans  &trans           &trans             &trans    &trans  &trans
-&trans     &kp EXCL   &kp AT       &kp LPAR  &kp RPAR   &kp DLLR                                            &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp LALT  &trans  &trans
-&kp LT     &kp GT     &kp PERCENT  &kp LBKT  &kp RBKT   &kp NUHS    &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans    &trans  &kp RIGHT_GUI
+&kp GRAVE  &kp PIPE2  &kp AMPS     &kp LBRC  &kp RBRC   &kp TILDE2                                          &trans  &trans           &trans             &trans    &trans    &trans
+&trans     &kp EXCL   &kp AT       &kp LPAR  &kp RPAR   &kp DLLR                                            &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp LALT  &kp RGUI  &trans
+&kp LT     &kp GT     &kp PERCENT  &kp LBKT  &kp RBKT   &kp NUHS    &trans        &trans    &trans  &trans  &trans  &trans           &trans             &trans    &trans    &kp RIGHT_GUI
                                    &trans    &kp EQUAL  &kp UNDER   &kp KP_MINUS  &kp NUBS  &trans  &trans  &trans  &trans           &trans
             >;
         };
@@ -169,36 +169,36 @@
             //                      | NONE   | LALT  | RWIN | LSHIFT | CTRL |   %   | CTRL | RSHIFT | RWIN | LALT | NONE |
 
             bindings = <
-&trans    &trans  &trans        &trans            &trans          &trans                                          &kp K_REDO     &kp K_PASTE    &kp K_COPY   &kp K_CUT  &trans      &trans
-&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                          &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT  &kp K_UNDO  &trans
-&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans      &trans      &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans      &trans
-                                &trans            &trans          &trans  &trans  &trans  &kp INSERT  &kp RETURN  &kp BACKSPACE  &kp DELETE     &trans
+&trans    &trans    &trans        &trans            &trans          &trans                                          &kp K_REDO     &kp K_PASTE    &kp K_COPY   &kp K_CUT  &trans      &trans
+&trans    &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                          &kp LEFT       &kp DOWN       &kp UP       &kp RIGHT  &kp K_UNDO  &trans
+&kp LGUI  &trans    &trans        &trans            &trans          &trans  &trans  &trans  &trans      &trans      &kp HOME       &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans      &trans
+                                  &trans            &trans          &trans  &trans  &trans  &kp INSERT  &kp RETURN  &kp BACKSPACE  &kp DELETE     &trans
             >;
         };
 
         f_keys {
             bindings = <
-&trans    &trans  &trans        &trans            &trans          &trans                                    &kp PRINTSCREEN  &kp F7      &kp F8  &kp F9  &trans  &trans
-&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                    &kp SCROLLLOCK   &kp F4      &kp F5  &kp F6  &trans  &trans
-&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans   &trans   &kp PAUSE_BREAK  &kp F1      &kp F2  &kp F3  &trans  &trans
-                                &trans            &trans          &trans  &trans  &trans  &kp F12  &kp F11  &kp F10          &kp SYSREQ  &trans
+&trans    &trans    &trans        &trans            &trans          &trans                                    &kp PRINTSCREEN  &kp F7      &kp F8  &kp F9  &trans  &trans
+&trans    &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                    &kp SCROLLLOCK   &kp F4      &kp F5  &kp F6  &trans  &trans
+&kp LGUI  &trans    &trans        &trans            &trans          &trans  &trans  &trans  &trans   &trans   &kp PAUSE_BREAK  &kp F1      &kp F2  &kp F3  &trans  &trans
+                                  &trans            &trans          &trans  &trans  &trans  &kp F12  &kp F11  &kp F10          &kp SYSREQ  &trans
             >;
         };
 
         mouse {
             bindings = <
-&trans    &trans  &trans        &trans            &trans          &trans                                       &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &trans  &trans
-&trans    &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                       &trans      &trans       &trans      &trans     &trans  &trans
-&kp LGUI  &trans  &trans        &trans            &trans          &trans  &trans  &trans  &trans    &trans     &trans      &trans       &trans      &trans     &trans  &trans
-                                &trans            &trans          &trans  &trans  &trans  &mkp MB4  &mkp RCLK  &mkp LCLK   &mkp MCLK    &trans
+&trans    &trans    &trans        &trans            &trans          &trans                                       &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &trans  &trans
+&trans    &kp LGUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                                       &trans      &trans       &trans      &trans     &trans  &trans
+&kp LGUI  &trans    &trans        &trans            &trans          &trans  &trans  &trans  &trans    &trans     &trans      &trans       &trans      &trans     &trans  &trans
+                                  &trans            &trans          &trans  &trans  &trans  &mkp MB4  &mkp RCLK  &mkp LCLK   &mkp MCLK    &trans
             >;
         };
 
         system {
             bindings = <
-&trans  &trans        &trans             &trans           &kp C_AL_LOGOFF     &trans                                                      &trans  &trans           &trans             &trans         &trans  &trans
-&trans  &kp C_REWIND  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_FAST_FORWARD  &ext_power EP_TOG                                           &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &trans  &trans
-&trans  &bt BT_SEL 3  &bt BT_SEL 2       &bt BT_SEL 1     &bt BT_SEL 0        &out OUT_TOG       &trans      &trans       &trans  &trans  &trans  &trans           &trans             &trans         &trans  &kp RGUI
+&trans  &trans        &trans             &trans           &kp C_AL_LOGOFF     &trans                                                      &trans  &trans           &trans             &trans         &trans    &trans
+&trans  &kp C_REWIND  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_FAST_FORWARD  &ext_power EP_TOG                                           &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RGUI  &trans
+&trans  &bt BT_SEL 3  &bt BT_SEL 2       &bt BT_SEL 1     &bt BT_SEL 0        &out OUT_TOG       &trans      &trans       &trans  &trans  &trans  &trans           &trans             &trans         &trans    &kp RGUI
                                          &trans           &kp C_MUTE          &kp C_PLAY_PAUSE   &kp C_STOP  &kp C_SLEEP  &trans  &trans  &trans  &trans           &trans
             >;
         };
