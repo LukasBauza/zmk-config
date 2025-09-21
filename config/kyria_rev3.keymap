@@ -32,10 +32,7 @@
 };
  */
 
-&caps_word {
-    continue-list = <UNDERSCORE BACKSPACE DELETE MINUS KP_MINUS>;
-    mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_LALT|MOD_LSFT|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
-};
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE MINUS KP_MINUS>; };
 
 / {
     combos {
